@@ -12,7 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // This line is STILL absolutely essential
+        // This line is ESSENTIAL for the PDF viewer to be found.
         maven { url = uri("https://jitpack.io") }
     }
 }
