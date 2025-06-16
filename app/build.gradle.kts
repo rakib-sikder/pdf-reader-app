@@ -6,6 +6,7 @@ plugins {
 
 android {
     namespace = "com.sikder.pdfreaderapp"
+    // Using the latest stable SDK version
     compileSdk = 34
 
     defaultConfig {
@@ -48,6 +49,7 @@ android {
 }
 
 dependencies {
+    // Core Android & Jetpack Compose dependencies (defined directly)
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -58,11 +60,14 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
-    // More stable PDF Viewer Library
+    // PDF Viewer Library (defined directly)
     implementation("com.github.mhiew:android-pdf-viewer:3.2.0-beta.1")
 
-    // ML Kit for On-Device Translation
+    // ML Kit for On-Device Translation (defined directly)
     implementation("com.google.mlkit:translate:17.0.2")
+    implementation(libs.material)
+    implementation(libs.okhttp)
+    implementation(libs.libraryy)
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")

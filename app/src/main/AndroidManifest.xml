@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permission to access the internet, needed for ML Kit to download translation models. -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permission to read files from storage, needed to open PDFs on older Android versions. -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
