@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // This plugin is essential for the 'by' keyword to work.
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -49,7 +50,7 @@ android {
 }
 
 dependencies {
-    // Core Android & Jetpack Compose dependencies (defined directly)
+    // Core Android & Jetpack Compose dependencies
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -59,15 +60,20 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.navigation:navigation-compose:2.7.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.5.0")
+    implementation("androidx.compose.foundation:foundation:1.5.0")
 
-    // PDF Viewer Library (defined directly)
+    // PDF Viewer Library
     implementation("com.github.mhiew:android-pdf-viewer:3.2.0-beta.1")
-
-    // ML Kit for On-Device Translation (defined directly)
+    implementation("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
+    // ML Kit for On-Device Translation
     implementation("com.google.mlkit:translate:17.0.2")
-    implementation(libs.material)
-    implementation(libs.okhttp)
-    implementation(libs.libraryy)
+
+
+    // This library is required for the .await() function in your TranslationService
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")
@@ -77,4 +83,13 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    // Optional: For dynamic color support on Android 12+
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-alpha01")
+    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation("androidx.compose.material3:material3:1.2.0-alpha01")
+
+
 }

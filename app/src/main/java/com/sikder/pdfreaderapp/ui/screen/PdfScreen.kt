@@ -19,6 +19,7 @@ import com.github.barteksc.pdfviewer.listener.OnTapListener
 import com.sikder.pdfreaderapp.ui.PdfViewModel
 import com.sikder.pdfreaderapp.ui.TranslationState
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PdfScreen(
     pdfViewModel: PdfViewModel = viewModel()
@@ -54,7 +55,7 @@ fun PdfScreen(
         ) {
             if (pdfUri != null) {
                 PdfViewer(
-                    uri = pdfUri!!,
+                    uri = pdfUri!! as Uri,
                     onTextSelected = { text ->
                         pdfViewModel.onTextSelected(text)
                     }
